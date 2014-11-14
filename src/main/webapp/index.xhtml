@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Crear usuario</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="form1">
+            <p:growl/>
+            <h:inputText value="#{crearUsuarioController.valor}"/>
+            <h:commandButton value="pulsar" action="#{crearUsuarioController.accion}"/>
+            
+        </h:form>
+        
+        <h:form>
+            
+            <p:dataTable var="usuario" value="#{crearUsuarioController.lista}">
+                <p:column headerText="login">
+                    <h:outputText value="#{usuario.login}"/>
+                </p:column>
+            </p:dataTable> 
+            
+        </h:form>
+        
+    </h:body>
+</html>
+
